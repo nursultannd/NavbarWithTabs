@@ -1,0 +1,48 @@
+.Popup {
+  .overlay {
+    background-color: rgba($color: #8d8d8d, $alpha: 0.3);
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+  .overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .box.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .box {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 100;
+    background-color: white;
+    border-radius: 4px;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 20em;
+      padding: 1em;
+      font-size: 14px;
+      .x-button {
+        cursor: pointer;
+      }
+      .x-button:hover {
+        background-color: #f9f9f9;
+      }
+    }
+    .content {
+      padding: 1em;
+      padding-top: 0;
+      overflow: scroll;
+    }
+  }
+}
